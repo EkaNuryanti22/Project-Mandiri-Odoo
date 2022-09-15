@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ekanur_kelompokbarang,access.ekanur.kelompokbarang,model_ekanur_kelompokbarang,,1,1,1,1
+access_ekanur_barang,access.ekanur.barang,model_ekanur_barang,,1,1,1,1
+access_ekanur_person,access.ekanur.person,model_ekanur_person,,1,1,1,1
+access_ekanur_kasir,access.ekanur.kasir,model_ekanur_kasir,,1,1,1,1
+access_ekanur_gudang,access.ekanur.gudang,model_ekanur_gudang,,1,1,1,1
+access_ekanur_keamanan,access.ekanur.keamanan,model_ekanur_keamanan,,1,1,1,1
+access_ekanur_kelompokgrooming,access.ekanur.kelompokgrooming,model_ekanur_kelompokgrooming,,1,1,1,1
+access_ekanur_grooming,access.ekanur.grooming,model_ekanur_grooming,,1,1,1,1
+access_ekanur_supplier,access.ekanur.supplier,model_ekanur_supplier,,1,1,1,1
+access_ekanur_penjualan,access.eknaur.penjualan,model_ekanur_penjualan,,1,1,1,1
+access_ekanur_detailpenjualan,access.ekanur.detailpenjualan,model_ekanur_detailpenjualan,,1,1,1,1
+access_ekanur_barangdatang,access.ekanur.barangdatang,model_ekanur_barangdatang,,1,1,1,1

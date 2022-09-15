@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem
+        id="ekanur_menu_root"
+        name="Eka Petshop"
+        sequence="10"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem
+        id="ekanur_barang_menu_categ"
+        name="Form Petshop"
+        parent="ekanur_menu_root"
+        sequence="10"/>
+
+     <!-- This Menu Item Must have a parent -->
+    <menuitem
+        id="ekanur_pegawai_menu_categ"
+        name="Staff"
+        parent="ekanur_menu_root"
+        sequence="20"/>
+
+    <menuitem
+        id="ekanur_grooming_menu_categ"
+        name="Grooming"
+        parent="ekanur_menu_root"
+        sequence="10"/>
+ <menuitem
+        id="ekanur_customer_menu_categ"
+        name="Customer"
+        parent="ekanur_menu_root"
+        sequence="10"/>
+
+<!-- This Menu Item Must have a parent -->
+<menuitem
+	  id="ekanur_transaksi_menu_categ"
+	  name="Transaction"
+	  parent="ekanur_menu_root"
+	  sequence="42"/>
+</odoo>

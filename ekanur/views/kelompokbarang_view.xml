@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ekanur.kelompokbarang tree view -->
+    <record id="ekanur_kelompokbarang_view_tree" model="ir.ui.view">
+        <field name="name">ekanur.kelompokbarang.view.tree</field>
+        <field name="model">ekanur.kelompokbarang</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="kode_kelompok"/>
+                <field name="kode_rak"/>
+
+								<!-- Perubahannya di sini -->
+                <field name="jml_item" />
+                <field name="daftar" />
+								<!-- Akhir perubahannya di sini -->
+            </tree>
+        </field>
+    </record>
+
+    <!-- dikimart.kelompokbarang form view -->
+    <record id="ekanur_kelompokbarang" model="ir.ui.view">
+        <field name="name">ekanur.kelompokbarang.view.form</field>
+        <field name="model">ekanur.kelompokbarang</field>
+        <field name="arch" type="xml">
+            <form string="Kelompok Barang">
+                <sheet>
+                    <group name="Kelompok" string="Posisi Kelompok">
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="kode_kelompok"/>
+												<!-- Perubahannya di sini -->
+                        <field name="jml_item" />
+												<!-- Akhir perubahannya di sini -->
+                    </group>
+
+                    <group name="Rak" string="Posisi Barang">
+                        <field name="kode_rak"/>
+                        <field name="barang_ids" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ekanur.kelompokbarang action window -->
+    <record id="ekanur_kelompokbarang_action" model="ir.actions.act_window">
+        <field name="name">Kelompok Petshop</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ekanur.kelompokbarang</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="ekanur_kelompokbarang_menu_act"
+        name="Petshop Category"
+        parent="ekanur_barang_menu_categ"
+        action="ekanur_kelompokbarang_action"
+        sequence="10"/>
+
+</odoo>

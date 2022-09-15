@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- res.partner inherit form view -->
+    <record id="res_partner_owner_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="poin" />
+                <field name="is_owner" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- res.partner inherit search view -->
+    <record id="res_partner_owner_inherit_search" model="ir.ui.view">
+        <field name="name">owner</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after" >
+                <filter name="owner" string="owner" domain="[('is_owner', '=', True)]"  />
+            </field>
+        </field>
+    </record>
+
+    <!-- res.partner action window -->
+    <record id="res_partner_owner_action" model="ir.actions.act_window">
+        <field name="name">owner</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">
+            {
+                'search_default_owner': 1,
+                'default_is_owner':True 
+            }
+        </field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="ekanur_owner_menu_act"
+        name="Owner"
+        parent="ekanur_menu_root"
+        action="res_partner_owner_action" 
+        sequence="41"/>
+
+</odoo>

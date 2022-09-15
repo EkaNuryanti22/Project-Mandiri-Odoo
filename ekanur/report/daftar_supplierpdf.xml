@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="report_supplier_pdf">
+    <t t-call="web.html_container">
+        <t t-call="web.internal_layout">
+            <div class="page">
+                <h2><b>SUPPLIER INTERNAL</b></h2>
+            
+            <t t-foreach="docs" t-as="d">
+                    <div class="row">
+                        <div class="col-4">Nama Toko             :</div>
+                        <div class="col-8"><span t-field="d.name"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">Alamat                  :</div>
+                        <div class="col-8"><span t-field="d.alamat"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">No.Telp                         :</div>
+                        <div class="col-8"><span t-field="d.no_telp"/></div>
+                    </div>
+                   <!-- <t t-foreach="d.detail_penjualan_ids" t-as="ds">
+                        <div class="row">
+                            <div class="col-4">Petshop        :</div>
+                            <div class="col-8">
+                                <span t-field="ds.barang.name"/>
+                            </div>
+                        </div>
+                    </t> -->
+                </t>
+            </div> 
+        </t>
+    </t>
+</template>
+
+</odoo>

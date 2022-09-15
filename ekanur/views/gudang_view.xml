@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ekanur.gudang inherit tree view -->
+    <record id="ekanur_gudang_view_tree_inherit" model="ir.ui.view">
+        <field name="name">Data gudang</field>
+        <field name="model">ekanur.gudang</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="ekanur_person_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="id_gudang" />
+            </xpath>          
+        </field>
+    </record>
+
+    <!-- ekanur.keamanan inherit form view -->
+    <record id="ekanur_gudang_view_form_inherit" model="ir.ui.view">
+        <field name="name">Form gudang</field>
+        <field name="model">ekanur.gudang</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="ekanur_person_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet//group[2]" position="after">
+                <group name="id" string="ID">
+                    <field name="id_gudang" />
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='alamat']" position="attributes">
+               <attribute name="string">Address</attribute>
+            </xpath>          
+        </field> 
+    </record>
+
+    <!-- ekanur.gudang action window -->
+    <record id="ekanur_gudang_action" model="ir.actions.act_window">
+        <field name="name">Gudang</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ekanur.gudang</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="ekanur_gudang_menu_act"
+        name="Warehouse"
+        parent="ekanur_pegawai_menu_categ"
+        action="ekanur_gudang_action"
+        sequence="10"/>
+
+</odoo>

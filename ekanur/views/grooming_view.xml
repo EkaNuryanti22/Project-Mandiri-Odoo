@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <!-- ekanur.grooming tree view -->
+    <record id="ekanur_grooming_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Grooming</field>
+        <field name="model">ekanur.grooming</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name" />
+                <field name="harga_biasa" />
+                <field name="harga_anti_jamur" />
+                <field name="harga_anti_kutu" />
+
+                <field name="kelompokgrooming_id" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- ekanur.grooming form view -->
+    <record id="ekanur_grooming_view_form" model="ir.ui.view">
+        <field name="name">Form Grooming</field>
+        <field name="model">ekanur.grooming</field>
+        <field name="arch" type="xml">
+            <form string="Grooming">
+                <sheet>
+                    <group name="Grooming" string="Grooming">
+                        <!-- Add your fields here -->
+                        <field name="name" />
+                        <field name="harga_biasa" />
+                        <field name="harga_anti_jamur" />
+                        <field name="harga_anti_kutu" />
+                    </group>
+
+                    <group name="Kelompok Grooming" string="Kelompok Grooming">
+                        <field name="kelompokgrooming_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ekanur.grooming action window -->
+    <record id="ekanur_grooming_action" model="ir.actions.act_window">
+        <field name="name">Daftar Grooming</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ekanur.grooming</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem
+        id="ekanur_grooming_menu_act"
+        name="Grooming List"
+        parent="ekanur_grooming_menu_categ"
+        action="ekanur_grooming_action"
+        sequence="10"/>
+
+</odoo>

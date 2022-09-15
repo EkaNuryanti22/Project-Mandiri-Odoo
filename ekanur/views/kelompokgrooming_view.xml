@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ekanur.kelompokgrooming tree view -->
+    <record id="ekanur_kelompokgrooming_view_tree" model="ir.ui.view">
+        <field name="name">ekanur.kelompokgrooming.view.tree</field>
+        <field name="model">ekanur.kelompokgrooming</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="kode_kelompok"/>
+                <field name="kode_ruang"/>
+
+								<!-- Perubahannya di sini -->
+                <field name="jml_item" />
+                <field name="daftar" />
+								<!-- Akhir perubahannya di sini -->
+            </tree>
+        </field>
+    </record>
+
+    <!-- ekanur.kelompokgrooming form view -->
+    <record id="ekanur_kelompokgrooming" model="ir.ui.view">
+        <field name="name">ekanur.kelompokgrooming.view.form</field>
+        <field name="model">ekanur.kelompokgrooming</field>
+        <field name="arch" type="xml">
+            <form string="Kelompok Grooming">
+                <sheet>
+                    <group name="Kelompok" string="Posisi Kelompok">
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="kode_kelompok"/>
+												<!-- Perubahannya di sini -->
+                        <field name="jml_item" />
+												<!-- Akhir perubahannya di sini -->
+                    </group>
+
+                    <group name="Ruang" string="Posisi Grooming">
+                        <field name="kode_ruang"/>
+                        <field name="grooming_ids" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ekanur.kelompokgrooming action window -->
+    <record id="ekanur_kelompokgrooming_action" model="ir.actions.act_window">
+        <field name="name">kelompok grooming</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ekanur.kelompokgrooming</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="ekanur_kelompokgrooming_menu_act"
+        name="Grooming Category"
+        parent="ekanur_grooming_menu_categ"
+        action="ekanur_kelompokgrooming_action"
+        sequence="10"/>
+
+</odoo>
